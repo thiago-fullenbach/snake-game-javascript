@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'ArcadeClassic';
+    src: url('../fonts/ARCADECLASSIC.TTF');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-body: #232388;
+    --info-width: 200px;
+    --info-height: 80px;
+    --info-bg: #020202;
+    --info-label-size: 1.8rem;
+    --info-size: 2rem;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'ArcadeClassic', sans-serif;
+    background-color: var(--bg-body);
+    color: #fff;
+}
+
+#snake-info-group {
+    display: flex;
+}
+
+.snake-info {
+    width: var(--info-width);
+    height: var(--info-height);
+    background-color: var(--info-bg);
+    font-size: var(--info-label-size);
+    margin: 25px;
+    padding: 10px;
+}
+
+.label-info {
+    float: left;
+}
+
+.info {
+    clear: left;
+    text-align: right;
+    font-size: var(--info-size);
+}
