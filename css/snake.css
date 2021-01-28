@@ -48,7 +48,7 @@ body {
     float: left;
 }
 
-.info {
+.snake-info p {
     clear: left;
     text-align: right;
     font-size: var(--info-size);
