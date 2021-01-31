@@ -20,7 +20,9 @@ window.onload = () => {
     tail = 5
 
     const lifeCounter = document.getElementById('info-lives')
+    const scoreCounter = document.getElementById('info-score')
     lifeCounter.innerHTML = lives
+    scoreCounter.innerHTML = tail + 1
     document.onkeydown = e => setDirection(e.key)
 
     function restart() { // restarts game by pressing "R" button
@@ -31,7 +33,6 @@ window.onload = () => {
     }
 
     function resetGame() { // reset all game variables
-        lifeCounter.innerHTML = lives
         trail = []
         tail = 5
         px = 5
@@ -40,12 +41,18 @@ window.onload = () => {
         vy = 0
         ax = 15
         ay = 10
+        lifeCounter.innerHTML = lives
+        updateScore()
     }
 
     function stopGame() {
         writeMsg('You  Lost!  Press  "R"  to  restart', '2rem')
         clearInterval(runGame)
         runGame = null
+    }
+
+    function updateScore() {
+        scoreCounter.innerHTML = tail + 1
     }
 
     function writeMsg(text, textSize) {
@@ -131,6 +138,7 @@ window.onload = () => {
 
         if(ax == px && ay == py) {
             tail++ // increases snake's length
+            updateScore()
             newApple()
         }
 
